@@ -1056,9 +1056,9 @@ EXTEND
   sig_item:
     [ "top"
       [ "exception"; (ext,alg_attrs0) = ext_attributes; gc = constructor_declaration ; item_attrs = item_attributes ->
-          let (x1, x2, x3, x4, alg_attrs1) = gc in
+          let (x1, x2, x3, x4, x5, alg_attrs1) = gc in
           let alg_attrs = merge_left_auxiliary_attrs ~{nonterm_name="sig_item-exception"} ~{left_name="algebraic attributes"} ~{right_name="item attributes"} alg_attrs0 alg_attrs1 in
-          let gc = (x1, x2, x3, x4, alg_attrs) in
+          let gc = (x1, x2, x3, x4, x5, alg_attrs) in
           sig_item_to_inline (MLast.SgExc loc gc item_attrs) ext
       | "external"; (ext,alg_attrs) = ext_attributes; i = V LIDENT "lid" ""; ":"; t = ctyp; "=";
         pd = V (LIST1 STRING) ; item_attrs = item_attributes ->
